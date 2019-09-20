@@ -53,6 +53,7 @@ set_property(SOURCE ${GRPC_SRCS} PROPERTY
 include_directories(
   $ENV{ZETH}
   $ENV{ZETH}/src
+  $ENV{ZETH}/src/scipr-lab # Path to the former submodules
   libff/common/default_types
 )
 
