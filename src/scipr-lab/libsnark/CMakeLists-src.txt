@@ -9,12 +9,6 @@ if(${CURVE} STREQUAL "BN128")
   )
 endif()
 
-# TODO(madars): Revisit the decision to only offer a static
-# library. In theory, it might be nice to offer a shared object, but
-# it may be impractical for users, since many of the build-time
-# options are mutually exclusive. At least as a static library with a
-# simple, reproducible build, users of this library can pick the
-# appropriate options themselves for embedding.
 add_library(
   snark
   STATIC
@@ -84,18 +78,6 @@ target_link_libraries(
 )
 
 add_executable(
-  profile_r1cs_se_ppzksnark
-  EXCLUDE_FROM_ALL
-
-  zk_proof_systems/ppzksnark/r1cs_se_ppzksnark/profiling/profile_r1cs_se_ppzksnark.cpp
-)
-target_link_libraries(
-  profile_r1cs_se_ppzksnark
-
-  snark
-)
-
-add_executable(
   profile_r1cs_gg_ppzksnark
   EXCLUDE_FROM_ALL
 
@@ -123,18 +105,6 @@ if ("${IS_LIBSNARK_PARENT}")
   )
 
   add_executable(
-    gadgetlib1_r1cs_ppzksnark_verifier_gadget_test
-    EXCLUDE_FROM_ALL
-
-    gadgetlib1/gadgets/verifiers/tests/test_r1cs_ppzksnark_verifier_gadget.cpp
-  )
-  target_link_libraries(
-    gadgetlib1_r1cs_ppzksnark_verifier_gadget_test
-
-    snark
-  )
-
-  add_executable(
     relations_qap_test
     EXCLUDE_FROM_ALL
 
@@ -159,18 +129,6 @@ if ("${IS_LIBSNARK_PARENT}")
   )
 
   add_executable(
-    zk_proof_systems_r1cs_se_ppzksnark_test
-    EXCLUDE_FROM_ALL
-
-    zk_proof_systems/ppzksnark/r1cs_se_ppzksnark/tests/test_r1cs_se_ppzksnark.cpp
-  )
-  target_link_libraries(
-    zk_proof_systems_r1cs_se_ppzksnark_test
-
-    snark
-  )
-
-  add_executable(
     zk_proof_systems_r1cs_gg_ppzksnark_test
     EXCLUDE_FROM_ALL
 
@@ -183,18 +141,6 @@ if ("${IS_LIBSNARK_PARENT}")
   )
 
   add_executable(
-    test_knapsack_gadget
-    EXCLUDE_FROM_ALL
-
-    gadgetlib1/gadgets/hashes/knapsack/tests/test_knapsack_gadget.cpp
-  )
-  target_link_libraries(
-    test_knapsack_gadget
-
-    snark
-  )
-
-  add_executable(
     test_merkle_tree_gadgets
     EXCLUDE_FROM_ALL
 
@@ -202,18 +148,6 @@ if ("${IS_LIBSNARK_PARENT}")
   )
   target_link_libraries(
     test_merkle_tree_gadgets
-
-    snark
-  )
-
-  add_executable(
-    test_set_commitment_gadget
-    EXCLUDE_FROM_ALL
-
-    gadgetlib1/gadgets/set_commitment/tests/test_set_commitment_gadget.cpp
-  )
-  target_link_libraries(
-    test_set_commitment_gadget
 
     snark
   )
@@ -236,10 +170,6 @@ if ("${IS_LIBSNARK_PARENT}")
     COMMAND gadgetlib1_simple_test
   )
   add_test(
-    NAME gadgetlib1_r1cs_ppzksnark_verifier_gadget_test
-    COMMAND gadgetlib1_r1cs_ppzksnark_verifier_gadget_test
-  )
-  add_test(
     NAME relations_qap_test
     COMMAND relations_qap_test
   )
@@ -248,24 +178,12 @@ if ("${IS_LIBSNARK_PARENT}")
     COMMAND zk_proof_systems_r1cs_ppzksnark_test
   )
   add_test(
-    NAME zk_proof_systems_r1cs_se_ppzksnark_test
-    COMMAND zk_proof_systems_r1cs_se_ppzksnark_test
-  )
-  add_test(
     NAME zk_proof_systems_r1cs_gg_ppzksnark_test
     COMMAND zk_proof_systems_r1cs_gg_ppzksnark_test
   )
   add_test(
-    NAME test_knapsack_gadget
-    COMMAND test_knapsack_gadget
-  )
-  add_test(
     NAME test_merkle_tree_gadgets
     COMMAND test_merkle_tree_gadgets
-  )
-  add_test(
-    NAME test_set_commitment_gadget
-    COMMAND test_set_commitment_gadget
   )
   add_test(
     NAME test_sha256_gadget
@@ -273,37 +191,9 @@ if ("${IS_LIBSNARK_PARENT}")
   )
 
   add_dependencies(check gadgetlib1_simple_test)
-  add_dependencies(check gadgetlib1_r1cs_ppzksnark_verifier_gadget_test)
   add_dependencies(check relations_qap_test)
   add_dependencies(check zk_proof_systems_r1cs_ppzksnark_test)
-  add_dependencies(check zk_proof_systems_r1cs_se_ppzksnark_test)
   add_dependencies(check zk_proof_systems_r1cs_gg_ppzksnark_test)
-  add_dependencies(check test_knapsack_gadget)
   add_dependencies(check test_merkle_tree_gadgets)
-  add_dependencies(check test_set_commitment_gadget)
   add_dependencies(check test_sha256_gadget)
 endif()
-
-# TODO (howardwu): Resolve runtime on targets:
-# gadgetlib1_fooram_test, zk_proof_systems_r1cs_mp_ppzkpcd_test, zk_proof_systems_r1cs_sp_ppzkpcd_test, zk_proof_systems_ram_zksnark_test
-
-# add_test(
-#   NAME gadgetlib1_fooram_test
-#   COMMAND gadgetlib1_fooram_test
-# )
-# add_test(
-#   NAME zk_proof_systems_r1cs_mp_ppzkpcd_test
-#   COMMAND zk_proof_systems_r1cs_mp_ppzkpcd_test
-# )
-# add_test(
-#   NAME zk_proof_systems_r1cs_sp_ppzkpcd_test
-#   COMMAND zk_proof_systems_r1cs_sp_ppzkpcd_test
-# )
-# add_test(
-#   NAME zk_proof_systems_ram_zksnark_test
-#   COMMAND zk_proof_systems_ram_zksnark_test
-# )
-# add_dependencies(check gadgetlib1_fooram_test)
-# add_dependencies(check zk_proof_systems_r1cs_mp_ppzkpcd_test)
-# add_dependencies(check zk_proof_systems_r1cs_sp_ppzkpcd_test)
-# add_dependencies(check zk_proof_systems_ram_zksnark_test)

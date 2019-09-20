@@ -67,7 +67,6 @@ include_directories( ${Boost_INCLUDE_DIR} )
 include_directories( ${PROJECT_BINARY_DIR} )
 
 # zeth library
-
 file(
   GLOB_RECURSE
   ZETH_SOURCE
@@ -88,9 +87,9 @@ add_library(
 target_include_directories(
   zeth
   PUBLIC
-  ${DEPENDS_DIR}/libsnark
-  ${DEPENDS_DIR}/libsnark/depends/libff
-  ${DEPENDS_DIR}/libsnark/depends/libfqfft
+  ${ZETH}/src/scipr-lab/libsnark
+  ${ZETH}/src/scipr-lab/libff
+  ${ZETH}/src/scipr-lab/libfqfft
 )
 target_link_libraries(
   zeth

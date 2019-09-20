@@ -49,7 +49,7 @@ set(
   "ALT_BN128" # We use the ALT_BN128 curve here, this is useful to pick the settings related to alt_bn128 in https://github.com/scipr-lab/libff/blob/master/libff/common/default_types/ec_pp.hpp
   CACHE
   STRING
-  "Default curve: one of ALT_BN128, BN128, EDWARDS, MNT4, MNT6"
+  "Default curve: ALT_BN128"
 )
 
 set(
@@ -95,7 +95,6 @@ option(
 if(APPLE)
   # These must be disabled to make dependencies build on macos
   set(WITH_PROCPS OFF)
-  set(WITH_SUPERCOP OFF CACHE BOOL "Build libff with supercop")
 
   # (Currently) OpenMP only available with custom llvm compilers
   if(${CMAKE_C_COMPILER} MATCHES ".*cc$")
@@ -123,10 +122,6 @@ add_definitions(-DCURVE_${CURVE})
 add_definitions(-DZKSNARK_${ZKSNARK})
 
 enable_testing()
-
-if(${CURVE} STREQUAL "BN128")
-  add_definitions(-DBN_SUPPORT_SNARK=1)
-endif()
 
 if("${VERBOSE}")
   add_definitions(-DVERBOSE=1)

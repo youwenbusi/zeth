@@ -95,6 +95,7 @@ set(
   "Override C++ compiler optimization flags"
 )
 
+# To remove now that the submodules has been removed
 if("${DEPENDS_DIR}" STREQUAL "")
   set(
     DEPENDS_DIR
