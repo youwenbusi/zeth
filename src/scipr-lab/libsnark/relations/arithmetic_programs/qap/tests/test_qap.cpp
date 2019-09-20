@@ -10,7 +10,7 @@
 #include <cstring>
 #include <vector>
 
-#include <libff/algebra/curves/mnt/mnt6/mnt6_pp.hpp>
+#include <libff/algebra/curves/alt_bn128/alt_bn128_pp.hpp>
 #include <libff/algebra/fields/field_utils.hpp>
 #include <libff/common/profiling.hpp>
 #include <libff/common/utils.hpp>
@@ -87,7 +87,7 @@ int main()
 {
     libff::start_profiling();
 
-    libff::mnt6_pp::init_public_params();
+    libff::alt_bn128_pp::init_public_params();
 
     const size_t num_inputs = 10;
 
@@ -98,19 +98,19 @@ int main()
 
     libff::enter_block("Test QAP with binary input");
 
-    test_qap<libff::Fr<libff::mnt6_pp> >(basic_domain_size, num_inputs, true);
-    test_qap<libff::Fr<libff::mnt6_pp> >(step_domain_size, num_inputs, true);
-    test_qap<libff::Fr<libff::mnt6_pp> >(extended_domain_size, num_inputs, true);
-    test_qap<libff::Fr<libff::mnt6_pp> >(extended_domain_size_special, num_inputs, true);
+    test_qap<libff::Fr<libff::alt_bn128_pp> >(basic_domain_size, num_inputs, true);
+    test_qap<libff::Fr<libff::alt_bn128_pp> >(step_domain_size, num_inputs, true);
+    test_qap<libff::Fr<libff::alt_bn128_pp> >(extended_domain_size, num_inputs, true);
+    test_qap<libff::Fr<libff::alt_bn128_pp> >(extended_domain_size_special, num_inputs, true);
 
     libff::leave_block("Test QAP with binary input");
 
     libff::enter_block("Test QAP with field input");
 
-    test_qap<libff::Fr<libff::mnt6_pp> >(basic_domain_size, num_inputs, false);
-    test_qap<libff::Fr<libff::mnt6_pp> >(step_domain_size, num_inputs, false);
-    test_qap<libff::Fr<libff::mnt6_pp> >(extended_domain_size, num_inputs, false);
-    test_qap<libff::Fr<libff::mnt6_pp> >(extended_domain_size_special, num_inputs, false);
+    test_qap<libff::Fr<libff::alt_bn128_pp> >(basic_domain_size, num_inputs, false);
+    test_qap<libff::Fr<libff::alt_bn128_pp> >(step_domain_size, num_inputs, false);
+    test_qap<libff::Fr<libff::alt_bn128_pp> >(extended_domain_size, num_inputs, false);
+    test_qap<libff::Fr<libff::alt_bn128_pp> >(extended_domain_size_special, num_inputs, false);
 
     libff::leave_block("Test QAP with field input");
 }
