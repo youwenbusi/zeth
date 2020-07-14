@@ -14,6 +14,7 @@
   "author": "Clearmatics Technologies LTD: Cryptography R&D Department",
   "license": "LGPL-3.0+",
   "dependencies": {
+    "@saleae/ffi": "^3.0.2",
     "add": "^2.0.6",
     "ethereumjs-abi": "^0.6.8",
     "ganache-cli": "^6.9.1",

@@ -287,6 +287,7 @@ endif()
 
 # Add all local subdirecetories
 add_subdirectory(libzeth)
+add_subdirectory(ffi)
 add_subdirectory(prover_server)
 # For now the MPC for Groth16 only is tailored to the alt_bn128 pairing group
 if(${ZKSNARK} STREQUAL "GROTH16")
