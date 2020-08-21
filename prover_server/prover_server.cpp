@@ -149,9 +149,16 @@ public:
 
         // Parse received message to feed to the prover
         try {
+            /*
             libzeth::FieldT root =
                 libzeth::field_element_from_hex<libzeth::FieldT>(
                     proof_inputs->mk_root());
+            */
+            std::array<FieldT, 2> roots;
+            roots[0] = libzeth::field_element_from_hex<libzeth::FieldT>(
+                    proof_inputs->mk_roots(0));
+            roots[1] = libzeth::field_element_from_hex<libzeth::FieldT>(
+                    proof_inputs->mk_roots(1));
             libzeth::bits64 vpub_in =
                 libzeth::bits64_from_hex(proof_inputs->pub_in_value());
             libzeth::bits64 vpub_out =
@@ -211,7 +218,7 @@ public:
             std::cout << "[DEBUG] Generating the proof..." << std::endl;
             libzeth::extended_proof<libzeth::ppT, snark> ext_proof =
                 this->prover.prove(
-                    root,
+                    roots,
                     joinsplit_inputs,
                     joinsplit_outputs,
                     vpub_in,
