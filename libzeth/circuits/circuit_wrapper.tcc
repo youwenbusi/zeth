@@ -97,7 +97,7 @@ extended_proof<ppT, snarkT> circuit_wrapper<
     NumOutputs,
     TreeDepth>::
     prove(
-        const FieldT &root,
+        const std::array<FieldT, NumInputs> &roots,
         const std::array<joinsplit_input<FieldT, TreeDepth>, NumInputs> &inputs,
         const std::array<zeth_note, NumOutputs> &outputs,
         const bits64 &vpub_in,
@@ -134,7 +134,7 @@ extended_proof<ppT, snarkT> circuit_wrapper<
         g(pb);
     g.generate_r1cs_constraints();
     g.generate_r1cs_witness(
-        root, inputs, outputs, vpub_in, vpub_out, h_sig_in, phi_in);
+        roots, inputs, outputs, vpub_in, vpub_out, h_sig_in, phi_in);
 
     bool is_valid_witness = pb.is_satisfied();
     std::cout << "******* [DEBUG] Satisfiability result: " << is_valid_witness

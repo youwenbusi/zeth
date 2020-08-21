@@ -64,8 +64,8 @@ private:
     libsnark::pb_variable<FieldT> ZERO;
 
     // ---- Primary inputs (public) ---- //
-    // Merkle Root
-    std::shared_ptr<libsnark::pb_variable<FieldT>> merkle_root;
+    // List of Merkle Roots of the notes to spend
+    libsnark::pb_variable_array<FieldT> merkle_roots;
     // List of nullifiers of the notes to spend
     std::array<std::shared_ptr<libsnark::digest_variable<FieldT>>, NumInputs>
         input_nullifiers;
@@ -136,24 +136,26 @@ public:
             // [Root, NullifierS, CommitmentS, h_sig, h_iS, Residual field
             // element(S)] ie, below is the index mapping of the primary input
             // elements on the protoboard:
-            // - Index of the "Root" field element: {0}
-            // - Index of the "NullifierS" field elements: [1, 1 + NumInputs[
-            // - Index of the "CommitmentS" field elements: [1 + NumInputs,
-            //   1 + NumInputs + NumOutputs[
-            // - Index of the "h_sig" field element: {1 + NumInputs +
+            // - Index of the "Root" field element: [0,1]
+            // - Index of the "NullifierS" field elements: [2, 2 + NumInputs[
+            // - Index of the "CommitmentS" field elements: [2 + NumInputs,
+            //   2 + NumInputs + NumOutputs[
+            // - Index of the "h_sig" field element: {2 + NumInputs +
             //   NumOutputs}
-            // - Index of the "h_iS" field elements: [1 + NumInputs + NumOutputs
-            //   + 1, 1 + NumInputs + NumOutputs + NumInputs[
+            // - Index of the "h_iS" field elements: [2 + NumInputs + NumOutputs
+            //   + 1, 2 + NumInputs + NumOutputs + NumInputs[
             // - Index of the "Residual field element(S)", ie "v_pub_in",
             //   "v_pub_out", and bits of previous variables not fitting within
-            //   FieldT::capacity() [1 + NumInputs + NumOutputs + NumInputs,
-            //   1 + NumInputs + NumOutputs + NumInputs + nb_field_residual[
+            //   FieldT::capacity() [2 + NumInputs + NumOutputs + NumInputs,
+            //   2 + NumInputs + NumOutputs + NumInputs + nb_field_residual[
 
             // We first allocate the root
+            /*
             merkle_root.reset(new libsnark::pb_variable<FieldT>);
             merkle_root->allocate(
                 pb, FMT(this->annotation_prefix, " merkle_root"));
-
+            */
+            merkle_roots.allocate(pb, NumInputs, " merkle_roots");
             output_commitments.allocate(pb, NumOutputs, " output_commitments");
 
             // We allocate a field element for each of the input nullifiers
@@ -194,7 +196,7 @@ public:
             // represented
             const size_t nb_packed_inputs =
                 2 * NumInputs + 1 + nb_field_residual;
-            const size_t nb_inputs = 1 + NumOutputs + nb_packed_inputs;
+            const size_t nb_inputs = 2 + NumOutputs + nb_packed_inputs;
             pb.set_input_sizes(nb_inputs);
             // ---------------------------------------------------------------
 
@@ -379,7 +381,7 @@ public:
         for (size_t i = 0; i < NumInputs; i++) {
             input_notes[i].reset(
                 new input_note_gadget<FieldT, HashT, HashTreeT, TreeDepth>(
-                    pb, ZERO, a_sks[i], input_nullifiers[i], *merkle_root));
+                    pb, ZERO, a_sks[i], input_nullifiers[i], merkle_roots[i]));
 
             h_i_gadgets[i].reset(new PRF_pk_gadget<FieldT, HashT>(
                 pb, ZERO, a_sks[i]->bits, h_sig->bits, i, h_is[i]));
@@ -479,7 +481,7 @@ public:
     }
 
     void generate_r1cs_witness(
-        const FieldT &rt,
+        const std::array<FieldT, NumInputs> &rt,
         const std::array<joinsplit_input<FieldT, TreeDepth>, NumInputs> &inputs,
         const std::array<zeth_note, NumOutputs> &outputs,
         bits64 vpub_in,
@@ -491,7 +493,10 @@ public:
         this->pb.val(ZERO) = FieldT::zero();
 
         // Witness the merkle root
-        this->pb.val(*merkle_root) = rt;
+        for (size_t i = 0; i < NumInputs; i++) {
+            this->pb.val(merkle_roots[i]) = rt[i];
+        }
+        //this->pb.val(*merkle_root) = rt;
 
         // Witness public values
         //

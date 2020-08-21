@@ -25,6 +25,7 @@ public:
     extended_proof(
         typename snarkT::ProofT &in_proof,
         libsnark::r1cs_primary_input<libff::Fr<ppT>> &in_primary_inputs);
+    //下面四个函数全部是返回&类型，相当于返回值的地址，这样可以直接作为参数传递给下一个函数，而无需先赋值给一个变量
     const typename snarkT::ProofT &get_proof() const;
 
     const libsnark::r1cs_primary_input<libff::Fr<ppT>> &get_primary_inputs()

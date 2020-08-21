@@ -6,6 +6,7 @@
 #define __ZETH_CIRCUITS_CIRCUITS_UTILS_TCC__
 
 #include <libsnark/gadgetlib1/pb_variable.hpp>
+#include <libzeth/circuits/circuit_utils.hpp>
 #include <vector>
 
 namespace libzeth

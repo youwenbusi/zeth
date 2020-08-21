@@ -27,6 +27,7 @@ note_gadget<FieldT>::note_gadget(
 
 template<typename FieldT> void note_gadget<FieldT>::generate_r1cs_constraints()
 {
+    /*
     for (size_t i = 0; i < ZETH_V_SIZE; i++) {
         libsnark::generate_boolean_r1cs_constraint<FieldT>(
             this->pb, value[i], FMT(this->annotation_prefix, " value[%zu]", i));
@@ -36,6 +37,7 @@ template<typename FieldT> void note_gadget<FieldT>::generate_r1cs_constraints()
         libsnark::generate_boolean_r1cs_constraint<FieldT>(
             this->pb, r[i], FMT(this->annotation_prefix, " r[%zu]", i));
     }
+     */
 }
 
 template<typename FieldT>
@@ -137,10 +139,13 @@ void input_note_gadget<FieldT, HashT, HashTreeT, TreeDepth>::
     note_gadget<FieldT>::generate_r1cs_constraints();
 
     // Generate the constraints for the rho 256-bit string
+    /*
     for (size_t i = 0; i < ZETH_RHO_SIZE; i++) { // ZETH_RHO_SIZE = 256
         libsnark::generate_boolean_r1cs_constraint<FieldT>(
             this->pb, rho[i], FMT(this->annotation_prefix, " rho"));
     }
+     */
+
     spend_authority->generate_r1cs_constraints();
     expose_nullifiers->generate_r1cs_constraints();
     commit_to_inputs_cm->generate_r1cs_constraints();
@@ -148,10 +153,12 @@ void input_note_gadget<FieldT, HashT, HashTreeT, TreeDepth>::
     // Given `enforce` is boolean constrained:
     // If `value` is zero, `enforce` _can_ be zero.
     // If `value` is nonzero, `enforce` _must_ be one.
+    /*
     libsnark::generate_boolean_r1cs_constraint<FieldT>(
         this->pb,
         value_enforce,
         FMT(this->annotation_prefix, " value_enforce"));
+    */
 
     this->pb.add_r1cs_constraint(
         libsnark::r1cs_constraint<FieldT>(

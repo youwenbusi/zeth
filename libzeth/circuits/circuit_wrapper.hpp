@@ -48,7 +48,7 @@ public:
 
     // Generate a proof and returns an extended proof
     extended_proof<ppT, snarkT> prove(
-        const FieldT &root,
+        const std::array<FieldT, NumInputs> &roots,
         const std::array<joinsplit_input<FieldT, TreeDepth>, NumInputs> &inputs,
         const std::array<zeth_note, NumOutputs> &outputs,
         const bits64 &vpub_in,

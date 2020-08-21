@@ -13,7 +13,7 @@ namespace libzeth
 static const size_t ZETH_NUM_JS_INPUTS = 2;
 static const size_t ZETH_NUM_JS_OUTPUTS = 2;
 
-static const size_t ZETH_MERKLE_TREE_DEPTH = 32;
+static const size_t ZETH_MERKLE_TREE_DEPTH = 5;
 
 static const size_t ZETH_V_SIZE = 64;     // 64 bits for the value
 static const size_t ZETH_RHO_SIZE = 256;  // 256 bits for rho
