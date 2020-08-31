@@ -2,13 +2,13 @@
 .PHONY: setup setup-dev dev check test syntax grpc test_contracts
 
 setup:
-	pip install --upgrade pip --progress-bar off
-	pip install -e . --progress-bar off
+	pip install --upgrade pip
+	pip install -e . -i https://pypi.tuna.tsinghua.edu.cn/simple
 	$(MAKE) grpc
-	python -c "from zeth.contracts import install_sol; \
-		install_sol()"
+	#python -c "from zeth.contracts import install_sol; \
+	#	install_sol()"
 
-check: syntax test
+#check: syntax test
 
 PROTOBUF_OUTPUT := \
   api/prover_pb2.py api/prover_pb2_grpc.py \
@@ -27,17 +27,17 @@ grpc: $(PROTOBUF_OUTPUT)
 	@# suppress "Nothing to do for ..." warning
 	@echo -n
 
-syntax: ${PROTOBUF_OUTPUT}
-	flake8 `git ls-files '**.py'`
-	mypy -p api
-	mypy -p zeth
-	mypy -p test
-	mypy -p test_commands
-	mypy -p commands
-	pylint zeth test test_commands commands
+#syntax: ${PROTOBUF_OUTPUT}
+#	flake8 `git ls-files '**.py'`
+#	mypy -p api
+#	mypy -p zeth
+#	mypy -p test
+#	mypy -p test_commands
+#	mypy -p commands
+#	pylint zeth test test_commands commands
 
-test: ${PROTOBUF_OUTPUT}
-	python -m unittest
+#test: ${PROTOBUF_OUTPUT}
+#	python -m unittest
 
-test_contracts: ${PROTOBUF_OUTPUT}
-	python test/test_contract_base_mixer.py
+#test_contracts: ${PROTOBUF_OUTPUT}
+#	python test/test_contract_base_mixer.py

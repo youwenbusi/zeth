@@ -40,7 +40,7 @@ VALID_ZKSNARKS: List[str] = [GROTH16_ZKSNARK, PGHR13_ZKSNARK]
 ZKSNARK_DEFAULT: str = GROTH16_ZKSNARK
 
 # Merkle tree depth
-ZETH_MERKLE_TREE_DEPTH: int = 32
+ZETH_MERKLE_TREE_DEPTH: int = 5
 
 # Nb of input notes
 JS_INPUTS: int = 2
@@ -106,7 +106,7 @@ NUM_INPUT_DIGESTS: int = (2 * JS_INPUTS) + 1
 TOTAL_DIGEST_RESIDUAL_BITS: int = NUM_INPUT_DIGESTS * DIGEST_RESIDUAL_BITS
 
 # Solidity compiler version
-SOL_COMPILER_VERSION: str = 'v0.5.16'
+SOL_COMPILER_VERSION: str = 'v0.5.17'
 
 # Seed for MIMC
 MIMC_MT_SEED: str = "clearmatics_mt_seed"

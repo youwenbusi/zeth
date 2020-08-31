@@ -9,7 +9,7 @@
 #include "libzeth/core/extended_proof.hpp"
 #include "libzeth/core/note.hpp"
 #include "libzeth/zeth_constants.hpp"
-
+#include "libzeth/core/bits.hpp"
 namespace libzeth
 {
 
@@ -48,13 +48,13 @@ public:
 
     // Generate a proof and returns an extended proof
     extended_proof<ppT, snarkT> prove(
-        const FieldT &root,
+        const std::array<FieldT, NumInputs> &roots,
         const std::array<joinsplit_input<FieldT, TreeDepth>, NumInputs> &inputs,
         const std::array<zeth_note, NumOutputs> &outputs,
         const bits64 &vpub_in,
         const bits64 &vpub_out,
-        const bits256 &h_sig_in,
-        const bits256 &phi_in,
+        const bits254 &h_sig_in,
+        const bits254 &phi_in,
         const typename snarkT::ProvingKeyT &proving_key) const;
 };
 

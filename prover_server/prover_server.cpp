@@ -149,17 +149,24 @@ public:
 
         // Parse received message to feed to the prover
         try {
+            /*
             libzeth::FieldT root =
                 libzeth::field_element_from_hex<libzeth::FieldT>(
                     proof_inputs->mk_root());
+            */
+            std::array<FieldT, 2> roots;
+            roots[0] = libzeth::field_element_from_hex<libzeth::FieldT>(
+                    proof_inputs->mk_roots(0));
+            roots[1] = libzeth::field_element_from_hex<libzeth::FieldT>(
+                    proof_inputs->mk_roots(1));
             libzeth::bits64 vpub_in =
                 libzeth::bits64_from_hex(proof_inputs->pub_in_value());
             libzeth::bits64 vpub_out =
                 libzeth::bits64_from_hex(proof_inputs->pub_out_value());
-            libzeth::bits256 h_sig_in =
-                libzeth::bits256_from_hex(proof_inputs->h_sig());
-            libzeth::bits256 phi_in =
-                libzeth::bits256_from_hex(proof_inputs->phi());
+            libzeth::bits254 h_sig_in =
+                libzeth::bits254_from_hex(proof_inputs->h_sig());
+            libzeth::bits254 phi_in =
+                libzeth::bits254_from_hex(proof_inputs->phi());
 
             if (libzeth::ZETH_NUM_JS_INPUTS != proof_inputs->js_inputs_size()) {
                 throw std::invalid_argument("Invalid number of JS inputs");
@@ -211,7 +218,7 @@ public:
             std::cout << "[DEBUG] Generating the proof..." << std::endl;
             libzeth::extended_proof<libzeth::ppT, snark> ext_proof =
                 this->prover.prove(
-                    root,
+                    roots,
                     joinsplit_inputs,
                     joinsplit_outputs,
                     vpub_in,
