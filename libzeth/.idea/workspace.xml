@@ -10,71 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7045430-1f18-4ade-b50b-5d5150cd56cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.git-hooks/pre-commit" beforeDir="false" afterPath="$PROJECT_DIR$/../.git-hooks/pre-commit" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api/zeth_messages.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../api/zeth_messages.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../client/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/api/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/api/py.typed" beforeDir="false" afterPath="$PROJECT_DIR$/../client/api/py.typed" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/commands/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/commands/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/commands/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/commands/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/commands/zeth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/commands/zeth_deploy.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/commands/zeth_deploy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/commands/zeth_gen_address.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/commands/zeth_gen_address.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/commands/zeth_ls_commits.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/commands/zeth_ls_commits.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/commands/zeth_ls_notes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/commands/zeth_ls_notes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/commands/zeth_mix.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/commands/zeth_mix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/commands/zeth_sync.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/commands/zeth_token_approve.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/commands/zeth_token_approve.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/test_commands/deploy_test_token.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/test_commands/deploy_test_token.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/test_commands/mock.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/test_commands/mock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/test_commands/scenario.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/test_commands/scenario.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/test_commands/test_erc_token_mixing.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/test_commands/test_erc_token_mixing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/zeth/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/zeth/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/zeth/contracts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/zeth/contracts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/zeth/mixer_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/zeth/mixer_client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/zeth/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/zeth/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/zeth/wallet.py" beforeDir="false" afterPath="$PROJECT_DIR$/../client/zeth/wallet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/python_web3" beforeDir="false" afterPath="$PROJECT_DIR$/../client/python_web3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../depends/libsnark" beforeDir="false" afterPath="$PROJECT_DIR$/../depends/libsnark" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../depends/libsodium" beforeDir="false" afterPath="$PROJECT_DIR$/../depends/libsodium" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits/circuit_types.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/circuit_types.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits/circuit_utils.tcc" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/circuit_utils.tcc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits/circuit_wrapper.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/circuit_wrapper.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits/circuit_wrapper.tcc" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/circuit_wrapper.tcc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits/commitments/commitment.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/commitments/commitment.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits/commitments/commitment.tcc" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/commitments/commitment.tcc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits/joinsplit.tcc" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/joinsplit.tcc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits/notes/note.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/notes/note.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits/notes/note.tcc" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/notes/note.tcc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits/prfs/prf.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/prfs/prf.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuits/prfs/prf.tcc" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/prfs/prf.tcc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/bits.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/core/bits.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/bits.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/core/bits.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/extended_proof.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/core/extended_proof.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/joinsplit_input.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/core/joinsplit_input.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/note.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/core/note.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/core/utils.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serialization/proto_utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/serialization/proto_utils.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serialization/proto_utils.tcc" beforeDir="false" afterPath="$PROJECT_DIR$/serialization/proto_utils.tcc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/circuits/merkle_tree_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/circuits/merkle_tree_test.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/circuits/note_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/circuits/note_test.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/prover/prover_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/prover/prover_test.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zeth_constants.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/zeth_constants.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mpc/commands/public_key" beforeDir="false" afterPath="$PROJECT_DIR$/../mpc/commands/public_key" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mpc_tools/mpc_phase2/mpc_client.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../mpc_tools/mpc_phase2/mpc_client.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mpc_tools/mpc_phase2/mpc_coord.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../mpc_tools/mpc_phase2/mpc_coord.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/circuits/poseidon_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/circuits/poseidon_test.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../prover_server/prover_server.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../prover_server/prover_server.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/check_copyright" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/check_copyright" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/ci" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/ci" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/format" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/format" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/mpc_setup" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/mpc_setup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/test_mpc_contributors_from_csv" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/test_mpc_contributors_from_csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/test_mpc_server_phase1" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/test_mpc_server_phase1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/test_mpc_server_phase2" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/test_mpc_server_phase2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/test_phase2" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/test_phase2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/test_pot_process" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/test_pot_process" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/test_zeth_cli" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/test_zeth_cli" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/test_zeth_cli_token" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/test_zeth_cli_token" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +41,7 @@
     <property name="cf.advertisement.text.has.clang-format" value="true" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ethsnarks" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -219,6 +161,18 @@
       <workItem from="1598859731646" duration="1802000" />
       <workItem from="1598861552074" duration="1378000" />
       <workItem from="1598864425611" duration="1828000" />
+      <workItem from="1598928090275" duration="1434000" />
+      <workItem from="1598930008622" duration="1041000" />
+      <workItem from="1598944623176" duration="724000" />
+      <workItem from="1598946440120" duration="2139000" />
+      <workItem from="1598952960692" duration="615000" />
+      <workItem from="1599029909730" duration="713000" />
+      <workItem from="1599037448120" duration="916000" />
+      <workItem from="1599057019166" duration="160000" />
+      <workItem from="1599113356399" duration="1571000" />
+      <workItem from="1599115596193" duration="1148000" />
+      <workItem from="1599117675444" duration="896000" />
+      <workItem from="1599120062736" duration="848000" />
     </task>
     <servers />
   </component>
@@ -234,6 +188,10 @@
       <screen x="0" y="0" width="1440" height="920" />
     </state>
     <state x="501" y="215" key="FileChooserDialogImpl/0.0.1440.920/-1920.477.1920.1160@0.0.1440.920" timestamp="1594351317352" />
+    <state x="-1459" y="701" key="SettingsEditor" timestamp="1598930452715">
+      <screen x="-1920" y="477" width="1920" height="1160" />
+    </state>
+    <state x="-1459" y="701" key="SettingsEditor/0.0.1440.920/-1920.477.1920.1160@-1920.477.1920.1160" timestamp="1598930452715" />
     <state x="418" y="58" width="605" height="804" key="find.popup" timestamp="1598345711604">
       <screen x="0" y="0" width="1440" height="920" />
     </state>

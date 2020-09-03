@@ -41,7 +41,7 @@ namespace
     libsnark::pb_variable_array<FieldT> x;
     x.allocate(pb, 2, "x");
 
-    pb.val(x[0]) = FieldT("14397397413755236225575615486459253198602422701513067526754101844196324375523");
+    pb.val(x[0]) = FieldT("1");
     pb.val(x[1]) = FieldT("2");
     // Public input
     pb.set_input_sizes(1);
