@@ -157,7 +157,11 @@ public:
             //   + 1, 2 + NumInputs + NumOutputs + NumInputs[
             // - Index of the "Residual field element(S)", ie "v_pub_in",
             //   "v_pub_out", and bits of previous variables not fitting within
+
             //   254 [2 + NumInputs + NumOutputs + NumInputs,
+
+            //   FieldT::capacity() [2 + NumInputs + NumOutputs + NumInputs,
+
             //   2 + NumInputs + NumOutputs + NumInputs + nb_field_residual[
 
             // We first allocate the root
@@ -167,10 +171,12 @@ public:
                 pb, FMT(this->annotation_prefix, " merkle_root"));
             */
             merkle_roots.allocate(pb, NumInputs, " merkle_roots");
+
             // Witness the merkle root
             for (size_t i = 0; i < NumInputs; i++) {
                 this->pb.val(merkle_roots[i]) = rt[i];
             }
+
 
             output_commitments.allocate(pb, NumOutputs, " output_commitments");
 
@@ -424,9 +430,10 @@ public:
         for (size_t i = 0; i < NumInputs; i++) {
             input_notes[i].reset(
                 new input_note_gadget<FieldT, HashT, HashTreeT, TreeDepth>(
-                    pb, ZERO, a_sks[i], input_nullifiers[i], rhos[i], merkle_roots[i], inputs[i].note));
+            pb, ZERO, a_sks[i], input_nullifiers[i], rhos[i], merkle_roots[i], inputs[i].note));
             std::cout << "rhos: " << std::endl;
             rhos[i]->bits.get_field_element_from_bits(pb).print();
+
             h_i_gadgets[i].reset(new PRF_pk_gadget<FieldT, HashT>(
                 pb, ZERO, a_sks[i]->bits, h_sig->bits, i, h_is[i]));
         }

@@ -39,6 +39,7 @@ template<typename FieldT> void note_gadget<FieldT>::generate_r1cs_constraints()
             this->pb, r[i], FMT(this->annotation_prefix, " r[%zu]", i));
     }
 
+
 }
 */
 /*
@@ -159,7 +160,9 @@ void input_note_gadget<FieldT, HashT, HashTreeT, TreeDepth>::
             this->pb, rho[i], FMT(this->annotation_prefix, " rho"));
     }
      */
+
     std::cout << "enter PRF_addr_a_pk_gadget" << std::endl;
+
     spend_authority->generate_r1cs_constraints();
     std::cout << "enter PRF_nf_gadget" << std::endl;
     expose_nullifiers->generate_r1cs_constraints();
