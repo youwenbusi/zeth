@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="80be81c1-cc7f-4960-ac36-e575ff637eff" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../depends/libsnark" beforeDir="false" afterPath="$PROJECT_DIR$/../depends/libsnark" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../depends/libsodium" beforeDir="false" afterPath="$PROJECT_DIR$/../depends/libsodium" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits/commitments/commitment.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/commitments/commitment.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits/commitments/commitment.tcc" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/commitments/commitment.tcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits/joinsplit.tcc" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/joinsplit.tcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits/notes/note.tcc" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/notes/note.tcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits/prfs/prf.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/prfs/prf.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuits/prfs/prf.tcc" beforeDir="false" afterPath="$PROJECT_DIR$/circuits/prfs/prf.tcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/joinsplit_input.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/core/joinsplit_input.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serialization/proto_utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/serialization/proto_utils.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serialization/proto_utils.tcc" beforeDir="false" afterPath="$PROJECT_DIR$/serialization/proto_utils.tcc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/prover/prover_test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/prover/prover_test.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prover_server/prover_server.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../prover_server/prover_server.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1h1qAOwxOvtUODO2kGfIz4qri0N" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.advertisement.text.has.clang-format" value="true" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="80be81c1-cc7f-4960-ac36-e575ff637eff" name="Default Changelist" comment="" />
+      <created>1599188801811</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599188801811</updated>
+      <workItem from="1599188804779" duration="868000" />
+      <workItem from="1599190977749" duration="1085000" />
+      <workItem from="1599635641316" duration="6000" />
+      <workItem from="1599817733514" duration="1201000" />
+      <workItem from="1599834978348" duration="1645000" />
+      <workItem from="1599973995324" duration="738000" />
+      <workItem from="1599976819892" duration="1559000" />
+      <workItem from="1599978879341" duration="1299000" />
+      <workItem from="1599981831745" duration="1845000" />
+      <workItem from="1600056843914" duration="1546000" />
+      <workItem from="1600058652016" duration="1908000" />
+      <workItem from="1600060571438" duration="1795000" />
+      <workItem from="1600062380859" duration="1803000" />
+      <workItem from="1600064902133" duration="1225000" />
+      <workItem from="1600092241336" duration="1793000" />
+      <workItem from="1600094046725" duration="1412000" />
+      <workItem from="1600145655806" duration="1801000" />
+      <workItem from="1600147469346" duration="1811000" />
+      <workItem from="1600149293710" duration="1797000" />
+      <workItem from="1600151104495" duration="1862000" />
+      <workItem from="1600152981764" duration="1802000" />
+      <workItem from="1600154797011" duration="1822000" />
+      <workItem from="1600156632413" duration="1795000" />
+      <workItem from="1600158441164" duration="1842000" />
+      <workItem from="1600160316570" duration="1518000" />
+      <workItem from="1600162622873" duration="1432000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>

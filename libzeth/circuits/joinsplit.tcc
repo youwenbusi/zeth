@@ -252,12 +252,14 @@ public:
                     FMT(this->annotation_prefix, " h_is[%zu]", i)));
             }
 
-            // Witness the h_iS, a_sk and rho_iS
+            // Witness the a_sk and rho_iS
             for (size_t i = 0; i < NumInputs; i++) {
                 a_sks[i]->generate_r1cs_witness(libff::bit_vector(
                         bits254_to_vector(inputs[i].spending_key_a_sk)));
                 rhos[i]->generate_r1cs_witness(libff::bit_vector(
                         bits254_to_vector(inputs[i].note.rho)));
+                std::cout << "rho: " << std::endl;
+                rhos[i]->bits.get_field_element_from_bits(pb).print();
             }
 
             for (size_t i = 0; i < NumOutputs; i++) {
@@ -425,8 +427,6 @@ public:
             input_notes[i].reset(
                 new input_note_gadget<FieldT, HashT, HashTreeT, TreeDepth>(
                     pb, ZERO, a_sks[i], input_nullifiers[i], rhos[i], merkle_roots[i], inputs[i].note));
-            std::cout << "rhos: " << std::endl;
-            rhos[i]->bits.get_field_element_from_bits(pb).print();
             h_i_gadgets[i].reset(new PRF_pk_gadget<FieldT, HashT>(
                 pb, ZERO, a_sks[i]->bits, h_sig->bits, i, h_is[i]));
         }
@@ -437,7 +437,6 @@ public:
                     bits_addr_to_vector(inputs[i].address_bits);
             input_notes[i]->generate_r1cs_witness(
                     merkle_path, address_bits, inputs[i].note);
-            std::cout << "here: " << std::endl;
             h_i_gadgets[i]->generate_r1cs_witness();
         }
 

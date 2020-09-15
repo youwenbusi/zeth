@@ -159,11 +159,8 @@ void input_note_gadget<FieldT, HashT, HashTreeT, TreeDepth>::
             this->pb, rho[i], FMT(this->annotation_prefix, " rho"));
     }
      */
-    std::cout << "enter PRF_addr_a_pk_gadget" << std::endl;
     spend_authority->generate_r1cs_constraints();
-    std::cout << "enter PRF_nf_gadget" << std::endl;
     expose_nullifiers->generate_r1cs_constraints();
-    std::cout << "enter COMM_cm_gadget" << std::endl;
     commit_to_inputs_cm->generate_r1cs_constraints();
     // value * (1 - enforce) = 0
     // Given `enforce` is boolean constrained:
