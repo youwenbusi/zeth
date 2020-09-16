@@ -179,4 +179,3 @@ int blake2b(void *out, size_t outlen,
 
     return 0;
 }
-
